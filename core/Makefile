@@ -324,7 +324,7 @@ BUILD_VERSION_TAGS += $(BUILD_KEYS)
 BUILD_VERSION_TAGS := $(subst $(space),$(comma),$(sort $(BUILD_VERSION_TAGS)))
 
 # A human-readable string that descibes this build in detail.
-build_desc := $(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT) $(PLATFORM_VERSION) $(BUILD_ID) $(BUILD_NUMBER_FROM_FILE) $(BUILD_VERSION_TAGS)
+build_desc := kang_guacamole-$(TARGET_BUILD_VARIANT) $(PLATFORM_VERSION) $(BUILD_ID) $(BUILD_NUMBER_FROM_FILE) $(BUILD_VERSION_TAGS)
 $(intermediate_system_build_prop): PRIVATE_BUILD_DESC := $(build_desc)
 
 # The string used to uniquely identify the combined build and product; used by the OTA server.
@@ -396,7 +396,7 @@ endef
 # harness to distinguish builds. Only add _asan for a sanitized build
 # if it isn't already a part of the flavor (via a dedicated lunch
 # config for example).
-TARGET_BUILD_FLAVOR := $(TARGET_PRODUCT)-$(TARGET_BUILD_VARIANT)
+TARGET_BUILD_FLAVOR := kang_guacamole-$(TARGET_BUILD_VARIANT)
 ifneq (, $(filter address, $(SANITIZE_TARGET)))
 ifeq (,$(findstring _asan,$(TARGET_BUILD_FLAVOR)))
 TARGET_BUILD_FLAVOR := $(TARGET_BUILD_FLAVOR)_asan
